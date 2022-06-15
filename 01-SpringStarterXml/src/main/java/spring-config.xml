@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="student" class="com.morningstar.Model.Student" scope ="prototype">
+		<property name ="studentId" value="100"/>
+		<property name="studentName" value="Makrand"/>
+		<property name="studentScore" value="60"/>
+	</bean>
+	<bean id="student2" class="com.morningstar.Model.Student" scope ="singleton">
+	<constructor-arg name="studentId" value="101" />
+	<constructor-arg name="studentName" value="Siddheshwar"/>
+	<constructor-arg name="studentScore" value="77"/>
+	</bean>
+	
+	
+</beans>
+
+<!-- 
+1) setter injection
+2) constructor injection
+3) field injection
+ -->

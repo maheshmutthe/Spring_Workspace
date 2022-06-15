@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="emp" class="com.morningstar.Model.Employee" scope ="prototype">
+		<property name ="empId" value="100"/>
+		<property name="empName" value="Makrand"/>
+		<property name="empSalary" value="60000"/>
+		<property name="empEmail" value= "makrand@gmail.com"/>
+		<property name="empDOJ" value="10-10-2021"></property>
+		<property name="department" ref="department"></property>
+	</bean>
+	<bean id="department" class="com.morningstar.Model.Department" scope ="prototype">
+		<property name ="deptId" value="11"/>
+		<property name="deptName" value="Science"/>
+	</bean>
+	
+	
+	
+</beans>
