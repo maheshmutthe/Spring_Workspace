@@ -4,15 +4,17 @@ import java.sql.SQLException;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import com.morningstar.dao.StudentDao;
 import com.morningstar.dao.StudentDaoImpl;
 import com.morningstar.model.Student;
 
-@Service
+@Service		//default work byType
 public class StudentServiceImpl implements StudentService {
 	@Autowired
+	@Qualifier("ddd")
 	private StudentDao dao= null;
 		
 	public StudentDao getDao() {

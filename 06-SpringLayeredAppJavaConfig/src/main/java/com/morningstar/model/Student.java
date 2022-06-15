@@ -1,8 +1,10 @@
 package com.morningstar.model;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(scopeName = "prototype")
 public class Student {
 	private int studentId;
 	private String studentName;

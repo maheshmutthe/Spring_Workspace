@@ -27,11 +27,11 @@ public class App
 // 		StudentDao dao = new StudentDaoImpl();
 // 		service.setDao(dao);
     	 
-    	 Student student2 = context.getBean(Student.class);
-    	 student2.setStudentId(103);
-    	 student2.setStudentName("Shubham");
-    	 student2.setStudentScore(88);
-    		service.addStudent(student2);
+//    	 Student student2 = context.getBean(Student.class);
+//    	 student2.setStudentId(103);
+//    	 student2.setStudentName("Shubham");
+//    	 student2.setStudentScore(88);
+//    		service.addStudent(student2);
  		
  		List<Student> result = service.findAllList();
  		for (Student student : result) {

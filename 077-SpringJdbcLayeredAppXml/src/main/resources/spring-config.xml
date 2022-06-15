@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+
+	<bean id="student" class="com.morningstar.model.Student" scope ="prototype">
+		<property name ="studentId" value="100"/>
+		<property name="studentName" value="Makrand"/>
+		<property name="studentScore" value="60"/>
+		<property name="address" ref="address"></property>
+	</bean>
+	
+	<bean id = "address" class="com.morningstar.model.Address" scope = "prototype">
+	<property name="addressId" value="1"></property>
+	<property name="city" value="Mumbai"></property>
+	<property name="pincode" value="444301"></property>
+	</bean>
+	
+	<bean id="service" class="com.morningstar.service.StudentServiceImpl"> <!-- Default scope singleton --> 
+		<property name="dao" ref="dao"></property>
+	</bean>
+	
+	<bean id="dao" class="com.morningstar.dao.StudentDaoSpringJdbcImpl">	<!-- Default scope singleton --> 
+		<property name="template" ref="template"></property>
+	</bean>
+	
+	<bean id = "template" class="org.springframework.jdbc.core.JdbcTemplate">
+	<property name="dataSource" ref="dataSource"></property>
+	</bean>
+	
+	<bean id = "dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:XE"></property>
+		<property name="username" value="hr"></property>
+		<property name="password" value="hr"></property>
+	</bean>
+	
+	
+</beans>

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import com.morningstar.model.Student;
 
-@Repository
+@Repository("ddd")
 public class StudentDaoImpl implements StudentDao{
 	
 	private static Connection connection = null;
