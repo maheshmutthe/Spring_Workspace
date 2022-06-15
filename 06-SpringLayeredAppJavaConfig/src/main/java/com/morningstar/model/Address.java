@@ -1,5 +1,8 @@
 package com.morningstar.model;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class Address {
 	private int addressId;
 	private String city;

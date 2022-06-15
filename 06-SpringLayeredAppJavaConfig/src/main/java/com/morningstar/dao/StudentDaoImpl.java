@@ -9,8 +9,11 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Repository;
+
 import com.morningstar.model.Student;
 
+@Repository
 public class StudentDaoImpl implements StudentDao{
 	
 	private static Connection connection = null;
